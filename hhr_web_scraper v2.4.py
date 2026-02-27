@@ -29,7 +29,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import text
 
 # Create an engine instance
-alchemyEngine = create_engine("postgresql+psycopg2://postgres:Renfe2022@172.19.28.174:5433/SalesSystem", pool_recycle=5);
+alchemyEngine = create_engine(os.getenv("CONNECTION_STRING"), pool_recycle=5);
 
 # Connect to PostgreSQL server
 conn = alchemyEngine.connect();
